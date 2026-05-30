@@ -3271,19 +3271,19 @@
         var i = 0, p = 0;
         var msgTimer = setInterval(function () {
           if (i < bootMsgs.length) { log.textContent = bootMsgs[i]; i++; }
-        }, 380);
+        }, 190);
         var pTimer = setInterval(function () {
-          p += Math.random() * 9 + 4;
+          p += Math.random() * 16 + 9;
           if (p >= 100) {
             p = 100; clearInterval(pTimer); clearInterval(msgTimer);
             fill.style.width = '100%'; pct.textContent = '100';
-            setTimeout(finishBoot, 650);
+            setTimeout(finishBoot, 300);
             return;
           }
           fill.style.width = p + '%'; pct.textContent = Math.floor(p);
-        }, 200);
+        }, 110);
         // failsafe
-        setTimeout(function () { if (!boot.classList.contains('done')) finishBoot(); }, 6000);
+        setTimeout(function () { if (!boot.classList.contains('done')) finishBoot(); }, 3000);
       }
 
       /* ---------- HERO GLITCH ---------- */
